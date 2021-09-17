@@ -24,13 +24,11 @@ class Nav extends React.Component {
   render() {
     const { categories } = this.state;
     return (
-      <div>
-        <ul>
-          Categorias:
-          { categories
-            .map(({ id, name }) => <li data-testid="category" key={ id }>{ name }</li>) }
-        </ul>
-      </div>
+      <ul>
+        Categorias:
+        { categories
+          .map(({ id, name }) => <li data-testid="category" key={ id }>{ name }</li>) }
+      </ul>
     );
   }
 }
