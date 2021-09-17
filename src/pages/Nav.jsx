@@ -27,7 +27,8 @@ class Nav extends React.Component {
       <div>
         <ul>
           Categorias:
-          { categories.map(({ id, name }) => <li data-testid="category" key={ id }>{ name }</li>) }
+          { categories
+            .map(({ id, name }) => <li data-testid="category" key={ id }>{ name }</li>) }
         </ul>
       </div>
     );
