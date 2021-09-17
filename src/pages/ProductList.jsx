@@ -63,7 +63,13 @@ export default class ProductList extends React.Component {
             type="text"
             data-testid="query-input"
           />
-          <button data-testid="query-button" type="button" onClick={ this.handleSubmit }>Buscar</button>
+          <button
+            data-testid="query-button"
+            type="button"
+            onClick={ this.handleSubmit }
+          >
+            Buscar
+          </button>
         </div>
         <div>
           { loading ? <Loading /> : this.renderProducts() }
