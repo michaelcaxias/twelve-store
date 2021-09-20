@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { getCategories } from '../services/api';
 
@@ -23,14 +24,28 @@ class Nav extends React.Component {
 
   render() {
     const { categories } = this.state;
+    const { onClick } = this.props;
     return (
       <ul>
         Categorias:
         { categories
-          .map(({ id, name }) => <li data-testid="category" key={ id }>{ name }</li>) }
+          .map(({ id, name }) => (
+            <button
+              type="button"
+              data-testid="category"
+              key={ id }
+              onClick={ () => onClick(id) }
+            >
+              { name }
+            </button>
+          )) }
       </ul>
     );
   }
 }
+
+Nav.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
 
 export default Nav;

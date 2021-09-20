@@ -1,43 +1,10 @@
 import React from 'react';
-import Loading from './Loading';
+import PropTypes from 'prop-types';
 import Product from './Product';
-import { getProductsFromCategoryAndQuery } from '../services/api';
 
 export default class ProductList extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      loading: false,
-      productFound: false,
-      inputSearch: '',
-      productList: [],
-    };
-  }
-
-  handleChange = ({ target: { value } }) => {
-    this.setState({
-      inputSearch: value,
-    });
-  }
-
-  handleSubmit = () => {
-    this.setState({ loading: true });
-    const { inputSearch } = this.state;
-    this.fetchProductList(1, inputSearch);
-  }
-
-  fetchProductList = async (categoryId, query) => {
-    const recoverProductList = await getProductsFromCategoryAndQuery(categoryId, query);
-    this.setState({
-      loading: false,
-      productFound: recoverProductList.results.length > 0,
-      productList: recoverProductList.results,
-    });
-  }
-
   renderProducts = () => {
-    const { productFound, productList } = this.state;
+    const { productFound, productList } = this.props;
     const productMap = productList
       .map(({ id, title, thumbnail, price }) => (
         <Product
@@ -51,7 +18,7 @@ export default class ProductList extends React.Component {
   }
 
   render() {
-    const { loading, inputSearch } = this.state;
+    const { inputSearch, handleChange, handleSubmit } = this.props;
 
     return (
       <div>
@@ -59,22 +26,32 @@ export default class ProductList extends React.Component {
           <input
             name="inputSearch"
             value={ inputSearch }
-            onChange={ this.handleChange }
+            onChange={ handleChange }
             type="text"
             data-testid="query-input"
           />
           <button
             data-testid="query-button"
             type="button"
-            onClick={ this.handleSubmit }
+            onClick={ handleSubmit }
           >
             Buscar
           </button>
         </div>
         <div>
-          { loading ? <Loading /> : this.renderProducts() }
+          { this.renderProducts() }
         </div>
       </div>
     );
   }
 }
+
+ProductList.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  inputSearch: PropTypes.string.isRequired,
+  productFound: PropTypes.bool.isRequired,
+  productList: PropTypes.shape({
+    map: PropTypes.func.isRequired,
+  }).isRequired,
+};
