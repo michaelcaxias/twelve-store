@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { getCategories } from '../services/api';
 
-class Nav extends React.Component {
+export default class Nav extends React.Component {
   constructor() {
     super();
 
@@ -47,5 +47,3 @@ class Nav extends React.Component {
 Nav.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
-
-export default Nav;
