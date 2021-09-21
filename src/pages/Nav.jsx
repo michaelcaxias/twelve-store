@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import './Nav.css';
 import { getCategories } from '../services/api';
 
 class Nav extends React.Component {
@@ -26,18 +27,22 @@ class Nav extends React.Component {
     const { categories } = this.state;
     const { onClick } = this.props;
     return (
-      <ul>
-        Categorias:
+      <ul className="category-list">
+        <h1>Categorias:</h1>
         { categories
           .map(({ id, name }) => (
-            <button
-              type="button"
-              data-testid="category"
-              key={ id }
-              onClick={ () => onClick(id) }
-            >
-              { name }
-            </button>
+            <section key={ id } className="category-item">
+              <label htmlFor={ id }>
+                <input
+                  type="radio"
+                  name="category"
+                  id={ id }
+                  data-testid="category"
+                  onClick={ () => onClick(id) }
+                />
+                { name }
+              </label>
+            </section>
           )) }
       </ul>
     );
