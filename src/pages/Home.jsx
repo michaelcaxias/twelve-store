@@ -60,6 +60,7 @@ export default class Home extends Component {
                 className="input-search"
                 type="text"
                 data-testid="query-input"
+                onKeyUp={ handleSubmit }
               />
               <button
                 data-testid="query-button"
