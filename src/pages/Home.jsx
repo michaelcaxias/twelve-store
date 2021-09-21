@@ -23,18 +23,25 @@ export default class Home extends Component {
     });
   }
 
-  handleSubmit = () => {
+  handleSubmit = ({ key, type }) => {
     const { inputSearch, categoryId } = this.state;
-    this.fetchProductList(categoryId, inputSearch);
+    console.log(key);
+    if (key === 'Enter') {
+      this.fetchProductList(categoryId, inputSearch);
+    }
+    if (type === 'click') {
+      this.fetchProductList(categoryId, inputSearch);
+    }
   };
 
-  fetchProductList = async (id, query) => {
+  fetchProductList = async (id, query = '') => {
     const recoverProductList = await getProductsFromCategoryAndQuery(id, query);
     this.setState({
       categoryId: id,
       productFound: recoverProductList.results.length > 0,
       productList: recoverProductList.results,
     });
+    return true;
   }
 
   render() {
@@ -60,7 +67,7 @@ export default class Home extends Component {
                 className="input-search"
                 type="text"
                 data-testid="query-input"
-                onKeyUp={ handleSubmit }
+                onKeyPress={ handleSubmit }
               />
               <button
                 data-testid="query-button"

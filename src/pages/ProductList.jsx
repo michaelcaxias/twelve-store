@@ -29,7 +29,9 @@ export default class ProductList extends React.Component {
 
 ProductList.propTypes = {
   productFound: PropTypes.bool.isRequired,
-  productList: PropTypes.shape({
-    map: PropTypes.func.isRequired,
-  }).isRequired,
+  productList: PropTypes.arrayOf(
+    PropTypes.shape({
+      map: PropTypes.func.isRequired,
+    }),
+  ).isRequired,
 };
