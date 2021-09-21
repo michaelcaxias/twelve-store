@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Product from './Product';
+import './ProductList.css';
 
 export default class ProductList extends React.Component {
   renderProducts = () => {
@@ -18,39 +19,15 @@ export default class ProductList extends React.Component {
   }
 
   render() {
-    const { inputSearch, handleChange, handleSubmit } = this.props;
-
     return (
-      <div>
-        <div>
-          <input
-            name="inputSearch"
-            value={ inputSearch }
-            onChange={ handleChange }
-            type="text"
-            data-testid="query-input"
-            onKeyUp={ handleSubmit }
-          />
-          <button
-            data-testid="query-button"
-            type="button"
-            onClick={ handleSubmit }
-          >
-            Buscar
-          </button>
-        </div>
-        <div>
-          { this.renderProducts() }
-        </div>
+      <div className="products">
+        { this.renderProducts() }
       </div>
     );
   }
 }
 
 ProductList.propTypes = {
-  handleChange: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired,
-  inputSearch: PropTypes.string.isRequired,
   productFound: PropTypes.bool.isRequired,
   productList: PropTypes.shape({
     map: PropTypes.func.isRequired,

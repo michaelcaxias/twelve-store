@@ -1,0 +1,11 @@
+.category-list {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  width: 100%;
+}
+
+.category-item {
+  margin-top: 10px;
+}
