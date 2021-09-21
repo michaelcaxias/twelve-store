@@ -7,7 +7,10 @@ export default class Product extends React.Component {
   render() {
     const { title, thumbnail, price, id } = this.props;
     return (
-      <Link to={ `/product/${id}/${encodeURIComponent(title)}` } data-testid="product-detail-link">
+      <Link
+        to={ `/product/${id}/${encodeURIComponent(title)}` }
+        data-testid="product-detail-link"
+      >
         <div data-testid="product" className="product">
           <h3 className="product-title">{title}</h3>
           <img className="product-image" src={ thumbnail } alt={ title } />
