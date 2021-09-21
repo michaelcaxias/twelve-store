@@ -10,6 +10,7 @@ export default class ProductList extends React.Component {
       .map(({ id, title, thumbnail, price }) => (
         <Product
           key={ id }
+          id={ id }
           title={ title }
           thumbnail={ thumbnail }
           price={ price }
