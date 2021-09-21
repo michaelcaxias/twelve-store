@@ -22,7 +22,6 @@ export default class Cart extends Component {
     if (itensLocalStorage !== null) {
       return (
         <section>
-          <p data-testid="shopping-cart-product-quantity">{ itensLocalStorage.length }</p>
           { itensLocalStorage.map(
             ({ id, title }) => (
               <div key={ id }>

@@ -8,27 +8,16 @@ export default class ButtonQuantity extends Component {
     };
   }
 
-  saveQuantity = () => {
-    const { quantity } = this.state;
-    const itensLocalStorage = JSON.parse(localStorage.getItem('CartQuantity'));
-    localStorage.setItem(
-      'CartQuantity',
-      JSON.stringify(itensLocalStorage + quantity),
-    );
-  }
-
   increaseOrDecrease = ({ target: { name } }) => {
     if (name === 'increase') {
       this.setState((prevState) => ({
         quantity: prevState.quantity + 1,
       }));
-      this.saveQuantity();
     }
     if (name === 'decrease') {
       this.setState((prevState) => ({
         quantity: prevState.quantity - 1,
       }));
-      this.saveQuantity();
     }
   }
 
@@ -45,7 +34,7 @@ export default class ButtonQuantity extends Component {
         >
           -
         </button>
-        <input type="text" disabled value={ quantity } />
+        <span data-testid="shopping-cart-product-quantity">{quantity}</span>
         <button
           type="button"
           name="increase"
