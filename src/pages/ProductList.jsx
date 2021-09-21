@@ -29,6 +29,7 @@ export default class ProductList extends React.Component {
             onChange={ handleChange }
             type="text"
             data-testid="query-input"
+            onKeyUp={ handleSubmit }
           />
           <button
             data-testid="query-button"
