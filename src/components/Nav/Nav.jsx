@@ -2,12 +2,14 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import './Nav.css';
 import { getCategories } from '../../services/api';
+import Loading from '../Loading/Loading';
 
 export default class Nav extends React.Component {
   constructor() {
     super();
 
     this.state = {
+      loading: true,
       categories: [],
     };
   }
@@ -20,13 +22,14 @@ export default class Nav extends React.Component {
     const recoverCategories = await getCategories();
     this.setState({
       categories: recoverCategories,
+      loading: false,
     });
   }
 
   render() {
-    const { categories } = this.state;
+    const { categories, loading } = this.state;
     const { onClick } = this.props;
-    return (
+    const categoryList = (
       <ul className="category-list">
         <h1>Categorias:</h1>
         { categories
@@ -45,6 +48,9 @@ export default class Nav extends React.Component {
             </section>
           )) }
       </ul>
+    );
+    return (
+      (loading) ? <Loading /> : categoryList
     );
   }
 }

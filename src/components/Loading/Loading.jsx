@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
+import './Loading.css';
 
-export default class Loading extends React.Component {
+export default class Loading extends Component {
   render() {
-    return <span>Loading...</span>;
+    return (
+      <section className="loading-container">
+        <div className="loading" />
+      </section>
+    );
   }
 }
