@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Product from './Product';
+import Product from '../Product/Product';
 import './ProductList.css';
 
 export default class ProductList extends React.Component {

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { getProductsFromCategoryAndQuery } from '../services/api';
-import Loading from './Loading';
-import AddCart from './AddCart';
+import Loading from '../components/Loading/Loading';
+import AddCart from '../components/AddCart';
 import cartIcon from '../images/cart-icon.png';
 
 export default class ProductDetails extends Component {

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import './Nav.css';
-import { getCategories } from '../services/api';
+import { getCategories } from '../../services/api';
 
 export default class Nav extends React.Component {
   constructor() {

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
-import cartIcon from '../images/cart-icon.png';
-import Nav from './Nav';
-import ProductList from './ProductList';
-import { getProductsFromCategoryAndQuery } from '../services/api';
+import cartIcon from '../../images/cart-icon.png';
+import Nav from '../../components/Nav/Nav';
+import ProductList from '../../components/ProductList/ProductList';
+import { getProductsFromCategoryAndQuery } from '../../services/api';
 
 export default class Home extends Component {
   constructor() {
