@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import ButtonQuantity from '../components/ButtonQuantity';
 
 export default class Cart extends Component {
@@ -30,6 +31,9 @@ export default class Cart extends Component {
               </div>
             ),
           ) }
+          <Link to="/checkout">
+            <button data-testid="checkout-products">Finalizar compra</button>
+          </Link>
         </section>
       );
     }

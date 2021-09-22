@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 export default class AddCart extends React.Component {
-  addLocalStorage = (id, title) => {
-    const products = { id, title };
+  addLocalStorage = (id, title, price) => {
+    const products = { id, title, price };
     if (localStorage.getItem('CartItens') === null) {
       localStorage.setItem('CartItens', JSON.stringify([products]));
     } else {
@@ -16,12 +16,12 @@ export default class AddCart extends React.Component {
   }
 
   render() {
-    const { id, title, testId } = this.props;
+    const { id, title, testId, price } = this.props;
     return (
       <button
         type="button"
         data-testid={ testId }
-        onClick={ () => this.addLocalStorage(id, title) }
+        onClick={ () => this.addLocalStorage(id, title, price) }
       >
         Adicionar ao Carrinho
       </button>
