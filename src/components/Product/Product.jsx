@@ -18,7 +18,7 @@ export default class Product extends React.Component {
           <img className="product-image" src={ thumbnail } alt={ title } />
           <h4 className="product-price">{`R$ ${price}` }</h4>
         </Link>
-        <AddCart id={ id } title={ title } testId="product-add-to-cart" />
+        <AddCart id={ id } title={ title } price={ price } testId="product-add-to-cart" />
       </div>
 
     );
