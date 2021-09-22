@@ -27,7 +27,6 @@ export default class Home extends Component {
 
   handleSubmit = ({ key, type }) => {
     const { inputSearch, categoryId } = this.state;
-    console.log(key);
     if (key === 'Enter') {
       this.fetchProductList(categoryId, inputSearch);
     }
