@@ -2,7 +2,7 @@ import React from 'react';
 import './Product.css';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import AddCart from './AddCart';
+import AddCart from '../AddCart';
 
 export default class Product extends React.Component {
   render() {

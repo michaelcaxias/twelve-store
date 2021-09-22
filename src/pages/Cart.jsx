@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ButtonQuantity from './ButtonQuantity';
+import ButtonQuantity from '../components/ButtonQuantity';
 
 export default class Cart extends Component {
   getLocalStorage = () => JSON.parse(localStorage.getItem('CartItens'))
