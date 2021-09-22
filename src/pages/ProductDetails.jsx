@@ -5,6 +5,7 @@ import { getProductsFromCategoryAndQuery } from '../services/api';
 import Loading from '../components/Loading/Loading';
 import AddCart from '../components/AddCart';
 import cartIcon from '../images/cart-icon.png';
+import FormAvaliation from '../components/FormAvaliation/FormAvaliation';
 
 export default class ProductDetails extends Component {
   constructor(props) {
@@ -27,7 +28,6 @@ export default class ProductDetails extends Component {
       loading: false,
       productDetails,
     });
-    console.log(productDetails);
     return true;
   }
 
@@ -42,6 +42,7 @@ export default class ProductDetails extends Component {
         <img src={ thumbnail } alt={ title } />
         <h3>{price}</h3>
         <AddCart id={ id } title={ title } testId="product-detail-add-to-cart" />
+        <FormAvaliation id={ id } />
       </section>
     );
     return (
