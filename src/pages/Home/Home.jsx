@@ -49,9 +49,9 @@ export default class Home extends Component {
   }
 
   render() {
-    const { categoryId, productList, productFound, inputSearch, loading} = this.state;
+    const { categoryId, productList, productFound, inputSearch, loading } = this.state;
     const { handleChange, handleSubmit } = this;
-    const mainContent =  (
+    const mainContent = (
       <section className="main-content">
         <nav>
           <Nav onClick={ this.fetchProductList } />
