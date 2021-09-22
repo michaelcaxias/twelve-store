@@ -33,4 +33,5 @@ AddCart.propTypes = {
   id: PropTypes.string.isRequired,
   testId: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
 };

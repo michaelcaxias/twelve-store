@@ -32,7 +32,12 @@ export default class Cart extends Component {
             ),
           ) }
           <Link to="/checkout">
-            <button data-testid="checkout-products">Finalizar compra</button>
+            <button
+              type="button"
+              data-testid="checkout-products"
+            >
+              Finalizar compra
+            </button>
           </Link>
         </section>
       );

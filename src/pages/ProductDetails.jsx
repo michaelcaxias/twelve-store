@@ -41,7 +41,12 @@ export default class ProductDetails extends Component {
         <h2 data-testid="product-detail-name">{ title }</h2>
         <img src={ thumbnail } alt={ title } />
         <h3>{price}</h3>
-        <AddCart id={ id } title={ title } price={ price } testId="product-detail-add-to-cart" />
+        <AddCart
+          id={ id }
+          title={ title }
+          price={ price }
+          testId="product-detail-add-to-cart"
+        />
         <FormAvaliation id={ id } />
       </section>
     );

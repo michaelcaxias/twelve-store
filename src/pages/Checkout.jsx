@@ -3,7 +3,6 @@ import PaymentForm from '../components/PaymentForm';
 import UserData from '../components/UserData';
 
 export default class Checkout extends Component {
-
   getLocalStorage = () => JSON.parse(localStorage.getItem('CartItens'))
 
   render() {
@@ -29,7 +28,7 @@ export default class Checkout extends Component {
           </section>
           <UserData />
           <PaymentForm />
-          <button>Comprar</button>
+          <button type="button">Comprar</button>
         </div>
       );
     }
