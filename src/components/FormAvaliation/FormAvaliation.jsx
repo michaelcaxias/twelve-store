@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './FormAvaliation.css';
+// Foi utilizado neste projeto o FrameWork Semantic UI
+import { Rating } from 'semantic-ui-react';
 
 export default class FormAvaliation extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      avaliation: 0,
+      rating: 0,
       email: '',
       description: '',
       ratingHistory: false,
@@ -33,6 +35,11 @@ export default class FormAvaliation extends React.Component {
     }
   }
 
+  handleRating = (event, { rating }) => {
+    // Função de CallBack do React Semantic UI https://react.semantic-ui.com/modules/rating/#types-on-rate
+    this.setState({ rating });
+  }
+
   handleChange = ({ target: { name, value } }) => {
     this.setState({
       [name]: value,
@@ -45,8 +52,8 @@ export default class FormAvaliation extends React.Component {
 
   addLocalStorage = () => {
     const { id } = this.props;
-    const { avaliation, email, description } = this.state;
-    const objAvaliation = { id, avaliation, email, description };
+    const { rating, email, description } = this.state;
+    const objAvaliation = { id, rating, email, description };
     if (localStorage.getItem('Avaliation') === null) {
       localStorage.setItem('Avaliation', JSON.stringify([objAvaliation]));
     } else {
@@ -60,13 +67,13 @@ export default class FormAvaliation extends React.Component {
   }
 
   render() {
-    const { avaliation, email, description, ratingHistory, arrayAvaliation } = this.state;
+    const { rating, email, description, ratingHistory, arrayAvaliation } = this.state;
     let renderAvaliations = '';
     if (arrayAvaliation.length !== null) {
       renderAvaliations = arrayAvaliation.map((element) => (
         <div key={ element.id } className="container-avaliation-feedback">
           <p>{ element.email }</p>
-          <p>{ element.avaliation }</p>
+          <Rating icon="star" rating={ element.rating } maxRating={ 5 } />
           <p>{ element.description }</p>
         </div>
       ));
@@ -81,13 +88,13 @@ export default class FormAvaliation extends React.Component {
             onChange={ this.handleChange }
             placeholder="Digite seu email"
           />
-          <input
-            type="number"
-            name="avaliation"
-            value={ avaliation }
-            onChange={ this.handleChange }
-            min="1"
-            max="5"
+          <Rating
+            icon="star"
+            name="rating"
+            rating={ rating }
+            onRate={ this.handleRating }
+            defaultRating={ 3 }
+            maxRating={ 5 }
           />
           <textarea
             data-testid="product-detail-evaluation"
