@@ -2,5 +2,6 @@
   align-items: center;
   display: flex;
   flex-flow: row wrap;
+  height: 80vh;
   justify-content: center;
 }

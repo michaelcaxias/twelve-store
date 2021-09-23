@@ -63,10 +63,9 @@ body {
 }
 
 .nav-item {
-  color: black;
+  color: rgba(0, 0, 0, 0.582);
 }
 
 .nav-item:hover {
   color: black;
-  font-weight: 900;
 }

@@ -16,7 +16,8 @@ export default class ProductList extends React.Component {
           price={ price }
         />
       ));
-    return productFound ? productMap : <h1>Nenhum produto foi encontrado</h1>;
+    return productFound
+      ? productMap : <h1 className="no-products">Nenhum produto foi encontrado</h1>;
   }
 
   render() {

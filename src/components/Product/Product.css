@@ -1,13 +1,18 @@
 .product {
-  align-items: center;
   border: 1px solid black;
-  border-radius: 20px;
   display: flex;
   flex-direction: column;
   height: 250px;
   justify-content: center;
   margin: 0.5rem;
   width: 250px;
+}
+
+.product-info {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .product-title {
