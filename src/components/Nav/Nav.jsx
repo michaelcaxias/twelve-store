@@ -52,7 +52,7 @@ export default class Nav extends React.Component {
     // );
     const categoryList = (
       <section className="dropdown">
-        <button type="button" className="dropdown-button">
+        <button type="button" className="dropdown-button nav-item">
           Categorias
           <Icon name="angle down" />
         </button>

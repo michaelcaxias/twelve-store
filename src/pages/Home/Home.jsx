@@ -63,7 +63,9 @@ export default class Home extends Component {
             Digite algum termo de pesquisa ou escolha uma categoria.
           </h1>
           <section className="input-search-container">
-            <Image src={ logo } size="small" />
+            <Link to="/">
+              <Image src={ logo } size="small" />
+            </Link>
             <section className="input-and-button">
               <input
                 name="inputSearch"
@@ -86,7 +88,10 @@ export default class Home extends Component {
             </section>
           </section>
           <nav className="nav-header">
-            <Nav onClick={ this.fetchProductList } />
+            <nav className="nav-items">
+              <Nav onClick={ this.fetchProductList } />
+              <Link to="#contact" className="nav-item">Contato</Link>
+            </nav>
             <Link data-testid="shopping-cart-button" to="/cart">
               <Icon name="shopping cart" size="large" color="black" />
             </Link>

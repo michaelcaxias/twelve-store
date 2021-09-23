@@ -53,5 +53,20 @@ body {
   background-color: #fff159;
   display: flex;
   justify-content: space-around;
+  padding: 1rem;
   width: 100%;
+}
+
+.nav-items {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-item {
+  color: black;
+}
+
+.nav-item:hover {
+  color: black;
+  font-weight: 900;
 }
