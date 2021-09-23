@@ -1,8 +1,10 @@
+/* eslint-disable react/jsx-max-depth */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
-import cartIcon from '../../images/cart-icon.png';
+import { Icon, Image } from 'semantic-ui-react';
 import Nav from '../../components/Nav/Nav';
+import logo from '../../images/logo.png';
 import ProductList from '../../components/ProductList/ProductList';
 import { getProductsFromCategoryAndQuery } from '../../services/api';
 import Loading from '../../components/Loading/Loading';
@@ -48,20 +50,20 @@ export default class Home extends Component {
   }
 
   render() {
-    const { categoryId, productList, productFound, inputSearch, loading } = this.state;
+    const { productList, productFound, inputSearch, loading } = this.state;
     const { handleChange, handleSubmit } = this;
     const mainContent = (
-      <section className="main-content">
-        <nav>
-          <Nav onClick={ this.fetchProductList } />
-        </nav>
-        <section className="search-container">
+      <main className="main-content">
+        <nav />
+        <header className="search-container">
           <h1
             data-testid="home-initial-message"
+            className="search-title"
           >
             Digite algum termo de pesquisa ou escolha uma categoria.
           </h1>
           <section className="input-search-container">
+            <Image src={ logo } size="small" />
             <section className="input-and-button">
               <input
                 name="inputSearch"
@@ -71,6 +73,7 @@ export default class Home extends Component {
                 type="text"
                 data-testid="query-input"
                 onKeyPress={ handleSubmit }
+                placeHolder="Buscar produtos, marcas e muito mais..."
               />
               <button
                 data-testid="query-button"
@@ -78,23 +81,22 @@ export default class Home extends Component {
                 className="input-button"
                 onClick={ handleSubmit }
               >
-                Buscar
+                <Icon name="search" color="black" />
               </button>
             </section>
-            <Link data-testid="shopping-cart-button" to="/cart">
-              <img src={ cartIcon } className="cart-icon" alt="cart" />
-            </Link>
           </section>
-          <ProductList
-            inputSearch={ inputSearch }
-            productList={ productList }
-            categoryId={ categoryId }
-            productFound={ productFound }
-            handleChange={ handleChange }
-            handleSubmit={ handleSubmit }
-          />
-        </section>
-      </section>
+          <nav className="nav-header">
+            <Nav onClick={ this.fetchProductList } />
+            <Link data-testid="shopping-cart-button" to="/cart">
+              <Icon name="shopping cart" size="large" color="black" />
+            </Link>
+          </nav>
+        </header>
+        <ProductList
+          productList={ productList }
+          productFound={ productFound }
+        />
+      </main>
     );
     return (
       (loading) ? <Loading /> : mainContent
