@@ -2,6 +2,7 @@ import React from 'react';
 import './Product.css';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { Card } from 'react-bootstrap';
 import AddCart from '../AddCart';
 
 export default class Product extends React.Component {
@@ -9,23 +10,22 @@ export default class Product extends React.Component {
     const { title, thumbnail, price, id } = this.props;
     return (
 
-      <div data-testid="product" className="product">
-        <div className="product-image-container">
-          <Link
-            to={ `/product/${id}/${encodeURIComponent(title)}` }
-            data-testid="product-detail-link"
-          >
-            <img className="product-image" src={ thumbnail } alt={ title } size="small" />
-          </Link>
-        </div>
-        <hr />
-        <div>
-          <h4 className="product-price">{`R$ ${price}` }</h4>
-          <h3 className="product-title">{title}</h3>
-        </div>
+      <Card style={ { width: '18rem' } } data-testid="product" className="product">
+        <Link
+          to={ `/product/${id}/${encodeURIComponent(title)}` }
+          data-testid="product-detail-link"
+        >
+          <Card.Img variant="top" src={ thumbnail } alt={ title } />
+          <hr />
+          <Card.Body>
+            <Card.Title className="product-price">{`R$ ${price}`}</Card.Title>
+            <Card.Text className="product-title">
+              {title}
+            </Card.Text>
+          </Card.Body>
+        </Link>
         <AddCart id={ id } title={ title } price={ price } testId="product-add-to-cart" />
-      </div>
-
+      </Card>
     );
   }
 }

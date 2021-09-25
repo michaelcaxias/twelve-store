@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Button } from 'react-bootstrap';
 
 export default class AddCart extends React.Component {
   addLocalStorage = (id, title, price) => {
@@ -18,13 +19,13 @@ export default class AddCart extends React.Component {
   render() {
     const { id, title, testId, price } = this.props;
     return (
-      <button
+      <Button
         type="button"
         data-testid={ testId }
         onClick={ () => this.addLocalStorage(id, title, price) }
       >
         Adicionar ao Carrinho
-      </button>
+      </Button>
     );
   }
 }

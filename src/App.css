@@ -13,3 +13,12 @@ button {
 input:focus {
   outline: none;
 }
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+a:hover {
+  color: unset;
+}

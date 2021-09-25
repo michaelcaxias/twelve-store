@@ -27,6 +27,10 @@ export default class Home extends Component {
     });
   }
 
+  clickOnLogo = () => {
+    this.fetchProductList('', '');
+  }
+
   handleSubmit = ({ key, type }) => {
     const { inputSearch, categoryId } = this.state;
     if (key === 'Enter') {
@@ -51,7 +55,7 @@ export default class Home extends Component {
 
   render() {
     const { productList, productFound, inputSearch, loading } = this.state;
-    const { handleChange, handleSubmit } = this;
+    const { handleChange, handleSubmit, clickOnLogo } = this;
     const mainContent = (
       <main className="main-content">
         <nav />
@@ -64,7 +68,7 @@ export default class Home extends Component {
           </h1>
           <section className="input-search-container">
             <Link to="/">
-              <Image src={ logo } size="small" />
+              <Image src={ logo } size="small" onClick={ clickOnLogo } />
             </Link>
             <section className="input-and-button">
               <input
