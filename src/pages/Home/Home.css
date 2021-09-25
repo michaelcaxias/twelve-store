@@ -69,3 +69,7 @@ body {
 .nav-item:hover {
   color: black;
 }
+
+.shopping-cart-button {
+  font-size: 1.5rem;
+}

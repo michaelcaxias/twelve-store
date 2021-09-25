@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import { Icon, Image } from 'semantic-ui-react';
+import { FiShoppingCart } from 'react-icons/fi';
 import Nav from '../../components/Nav/Nav';
 import logo from '../../images/logo.png';
 import ProductList from '../../components/ProductList/ProductList';
@@ -97,7 +98,7 @@ export default class Home extends Component {
               <Link to="#contact" className="nav-item">Contato</Link>
             </nav>
             <Link data-testid="shopping-cart-button" to="/cart">
-              <Icon name="shopping cart" size="large" color="black" />
+              <FiShoppingCart className="shopping-cart-button" />
             </Link>
           </nav>
         </header>
