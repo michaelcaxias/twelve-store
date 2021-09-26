@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './ProductDetails.css';
-import { Card } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { FiShoppingCart } from 'react-icons/fi';
+import { BiArrowBack } from 'react-icons/bi';
 import { getProductsFromCategoryAndQuery } from '../services/api';
 import Loading from '../components/Loading/Loading';
 import AddCart from '../components/AddCart';
@@ -34,28 +35,35 @@ export default class ProductDetails extends Component {
   }
 
   render() {
-    const { productDetails: { id, title, thumbnail, price }, loading } = this.state;
+    const { productDetails:
+      { id, title, thumbnail, price, permalink }, loading } = this.state;
     const product = (
       <section>
-        <Link data-testid="shopping-cart-button" to="/cart">
-          <FiShoppingCart className="shopping-cart-button" />
-        </Link>
+        <header className="header-icons">
+          <Link to="/">
+            <BiArrowBack className="nav-icon" />
+          </Link>
+          <Link data-testid="shopping-cart-button" to="/cart">
+            <FiShoppingCart className="nav-icon" />
+          </Link>
+        </header>
         <section className="product-details-container">
-          <Card style={ { width: '18rem' } }>
-            <Card.Img variant="top" src={ thumbnail } />
-            <Card.Body>
-              <Card.Title>{`R$ ${price}`}</Card.Title>
-              <Card.Text data-testid="product-detail-name">
-                { title }
-              </Card.Text>
-            </Card.Body>
-            <AddCart
-              id={ id }
-              title={ title }
-              price={ price }
-              testId="product-detail-add-to-cart"
-            />
-          </Card>
+          <section className="product-details">
+            <img src={ thumbnail } alt={ title } className="product-details-image" />
+            <h1>{`R$ ${price}`}</h1>
+            <p data-testid="product-detail-name ">{ title }</p>
+            <section className="product-details-buttons">
+              <AddCart
+                id={ id }
+                title={ title }
+                price={ price }
+                testId="product-detail-add-to-cart"
+              />
+              <Button variant="info">
+                <a target="_blank" rel="noreferrer" href={ permalink }>Ir ao site</a>
+              </Button>
+            </section>
+          </section>
           <FormAvaliation id={ id } />
         </section>
       </section>

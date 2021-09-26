@@ -122,7 +122,7 @@ export default class FormAvaliation extends React.Component {
                 rows={ 3 }
               />
             </Form.Group>
-            <Button onClick={ this.handleSubmit }>Avaliar</Button>
+            <Button onClick={ this.handleSubmit } size="lg">Avaliar</Button>
           </Form>
         </section>
         <section>

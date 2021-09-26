@@ -30,26 +30,6 @@ export default class Nav extends React.Component {
   render() {
     const { categories, loading } = this.state;
     const { onClick } = this.props;
-    // const categoryList = (
-    //   <ul className="category-list">
-    //     <h1>Categorias:</h1>
-    //     { categories
-    //       .map(({ id, name }) => (
-    //         <section key={ id } className="category-item">
-    //           <label htmlFor={ id }>
-    //             <input
-    //               type="radio"
-    //               name="category"
-    //               id={ id }
-    //               data-testid="category"
-    //               onClick={ () => onClick(id) }
-    //             />
-    //             { name }
-    //           </label>
-    //         </section>
-    //       )) }
-    //   </ul>
-    // );
     const categoryList = (
       <section className="dropdown">
         <button type="button" className="dropdown-button nav-item">
