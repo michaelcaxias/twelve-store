@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import './ProductDetails.css';
+import { Card } from 'react-bootstrap';
+import { FiShoppingCart } from 'react-icons/fi';
 import { getProductsFromCategoryAndQuery } from '../services/api';
 import Loading from '../components/Loading/Loading';
 import AddCart from '../components/AddCart';
-import cartIcon from '../images/cart-icon.png';
 import FormAvaliation from '../components/FormAvaliation/FormAvaliation';
 
 export default class ProductDetails extends Component {
@@ -36,18 +38,26 @@ export default class ProductDetails extends Component {
     const product = (
       <section>
         <Link data-testid="shopping-cart-button" to="/cart">
-          <img src={ cartIcon } className="cart-icon" alt="cart" />
+          <FiShoppingCart className="shopping-cart-button" />
         </Link>
-        <h2 data-testid="product-detail-name">{ title }</h2>
-        <img src={ thumbnail } alt={ title } />
-        <h3>{price}</h3>
-        <AddCart
-          id={ id }
-          title={ title }
-          price={ price }
-          testId="product-detail-add-to-cart"
-        />
-        <FormAvaliation id={ id } />
+        <section className="product-details-container">
+          <Card style={ { width: '18rem' } }>
+            <Card.Img variant="top" src={ thumbnail } />
+            <Card.Body>
+              <Card.Title>{`R$ ${price}`}</Card.Title>
+              <Card.Text data-testid="product-detail-name">
+                { title }
+              </Card.Text>
+            </Card.Body>
+            <AddCart
+              id={ id }
+              title={ title }
+              price={ price }
+              testId="product-detail-add-to-cart"
+            />
+          </Card>
+          <FormAvaliation id={ id } />
+        </section>
       </section>
     );
     return (

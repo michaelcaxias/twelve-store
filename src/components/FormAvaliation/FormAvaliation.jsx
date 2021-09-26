@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import './FormAvaliation.css';
 // Foi utilizado neste projeto o FrameWork Semantic UI
 import { Rating } from 'semantic-ui-react';
+import { Form, Button } from 'react-bootstrap';
+import perfilImage from '../../images/perfil-image.png';
 
 export default class FormAvaliation extends React.Component {
   constructor(props) {
@@ -71,41 +73,63 @@ export default class FormAvaliation extends React.Component {
     let renderAvaliations = '';
     if (arrayAvaliation.length !== null) {
       renderAvaliations = arrayAvaliation.map((element) => (
-        <div key={ element.id } className="container-avaliation-feedback">
-          <p>{ element.email }</p>
-          <Rating icon="star" rating={ element.rating } maxRating={ 5 } />
-          <p>{ element.description }</p>
+        <div key={ element.id } className="avaliation-section feedback">
+          <div>
+            <img src={ perfilImage } alt="perfil" />
+          </div>
+          <div>
+            <p>{ element.email }</p>
+            <Rating icon="star" rating={ element.rating } maxRating={ 5 } />
+            <p>{ element.description }</p>
+          </div>
         </div>
       ));
     }
     return (
-      <section>
-        <form>
-          <input
-            type="text"
-            name="email"
-            value={ email }
-            onChange={ this.handleChange }
-            placeholder="Digite seu email"
-          />
-          <Rating
-            icon="star"
-            name="rating"
-            rating={ rating }
-            onRate={ this.handleRating }
-            defaultRating={ 3 }
-            maxRating={ 5 }
-          />
-          <textarea
-            data-testid="product-detail-evaluation"
-            value={ description }
-            onChange={ this.handleChange }
-            name="description"
-          />
-          <button type="button" onClick={ this.handleSubmit }>Avaliar</button>
-        </form>
+      <section className="form-avaliation-container">
+        <section className="form-avaliation avaliation-section">
+          <Form>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Digite seu e-mail:</Form.Label>
+              <Form.Control
+                type="email"
+                name="email"
+                onChange={ this.handleChange }
+                value={ email }
+                placeholder="nome@exemplo.com"
+              />
+            </Form.Group>
+            <section>
+              <p>Avaliação</p>
+              <Rating
+                icon="star"
+                name="rating"
+                rating={ rating }
+                size="huge"
+                onRate={ this.handleRating }
+                defaultRating={ 3 }
+                maxRating={ 5 }
+              />
+            </section>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+              <Form.Label>Conte-nos mais detalhes:</Form.Label>
+              <Form.Control
+                as="textarea"
+                name="description"
+                data-testid="product-detail-evaluation"
+                value={ description }
+                onChange={ this.handleChange }
+                rows={ 3 }
+              />
+            </Form.Group>
+            <Button onClick={ this.handleSubmit }>Avaliar</Button>
+          </Form>
+        </section>
         <section>
-          { ratingHistory ? renderAvaliations : '' }
+          <p>Avaliações:</p>
+          <section className="feedbacks-section">
+            { ratingHistory ? renderAvaliations : '' }
+          </section>
         </section>
       </section>
     );
