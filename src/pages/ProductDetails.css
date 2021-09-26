@@ -25,6 +25,14 @@
   gap: 1rem;
 }
 
+.buyNow {
+  background-color: #0dcaf0;
+  border-radius: 0.25rem;
+  font-weight: 400;
+  padding: 0.375rem 0.75rem;
+  text-align: center;
+}
+
 .header-icons {
   display: flex;
   justify-content: space-around;

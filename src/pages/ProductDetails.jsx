@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './ProductDetails.css';
-import { Button } from 'react-bootstrap';
 import { FiShoppingCart } from 'react-icons/fi';
 import { BiArrowBack } from 'react-icons/bi';
 import { getProductsFromCategoryAndQuery } from '../services/api';
@@ -59,9 +58,14 @@ export default class ProductDetails extends Component {
                 price={ price }
                 testId="product-detail-add-to-cart"
               />
-              <Button variant="info">
-                <a target="_blank" rel="noreferrer" href={ permalink }>Ir ao site</a>
-              </Button>
+              <a
+                target="_blank"
+                className="buyNow"
+                rel="noopener noreferrer"
+                href={ permalink }
+              >
+                Ir ao site
+              </a>
             </section>
           </section>
           <FormAvaliation id={ id } />
