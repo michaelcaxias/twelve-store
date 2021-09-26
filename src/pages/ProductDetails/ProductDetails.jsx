@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import './ProductDetails.css';
 import { FiShoppingCart } from 'react-icons/fi';
 import { BiArrowBack } from 'react-icons/bi';
-import { getProductsFromCategoryAndQuery } from '../services/api';
-import Loading from '../components/Loading/Loading';
-import AddCart from '../components/AddCart';
-import FormAvaliation from '../components/FormAvaliation/FormAvaliation';
+import { getProductsFromCategoryAndQuery } from '../../services/api';
+import Loading from '../../components/Loading/Loading';
+import AddCart from '../../components/AddCart';
+import FormAvaliation from '../../components/FormAvaliation/FormAvaliation';
 
 export default class ProductDetails extends Component {
   constructor(props) {
