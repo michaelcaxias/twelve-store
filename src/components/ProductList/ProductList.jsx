@@ -1,11 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { BiShoppingBag } from 'react-icons/bi';
 import Product from '../Product/Product';
 import './ProductList.css';
 
 export default class ProductList extends React.Component {
   renderProducts = () => {
     const { productFound, productList } = this.props;
+    const notFoundHeading = (
+      <h1 className="no-products">
+        Nenhum produto foi encontrado
+        {' '}
+        <BiShoppingBag />
+      </h1>
+    );
     const productMap = productList
       .map(({ id, title, thumbnail, price }) => (
         <Product
@@ -17,7 +25,7 @@ export default class ProductList extends React.Component {
         />
       ));
     return productFound
-      ? productMap : <h1 className="no-products">Nenhum produto foi encontrado</h1>;
+      ? productMap : notFoundHeading;
   }
 
   render() {
