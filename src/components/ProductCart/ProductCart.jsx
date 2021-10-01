@@ -2,7 +2,7 @@ import './ProductCart.css';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Item } from 'semantic-ui-react';
-import ButtonQuantity from '../ButtonQuantity';
+import ButtonQuantity from '../ButtonQuantity/ButtonQuantity';
 
 export default class ProductCart extends Component {
   render() {

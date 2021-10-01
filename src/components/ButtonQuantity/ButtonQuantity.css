@@ -1,0 +1,17 @@
+.ui.button {
+  margin: 0;
+} 
+
+.buttons-quantity-container {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  gap: 0;
+}
+
+.product-quantity {
+  font-size: 1rem;
+  padding: 0.6rem 1.3rem;
+  background-color: antiquewhite;
+  font-weight: 900;
+}

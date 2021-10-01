@@ -1,4 +1,6 @@
+import './ButtonQuantity.css';
 import React, { Component } from 'react';
+import { Button } from 'semantic-ui-react';
 
 export default class ButtonQuantity extends Component {
   constructor(props) {
@@ -25,24 +27,25 @@ export default class ButtonQuantity extends Component {
     const { quantity } = this.state;
     const { increaseOrDecrease } = this;
     return (
-      <section>
-        <button
-          type="button"
-          name="decrease"
-          data-testid="product-decrease-quantity"
-          onClick={ increaseOrDecrease }
-        >
-          -
-        </button>
-        <span data-testid="shopping-cart-product-quantity">{quantity}</span>
-        <button
-          type="button"
+      <section className="buttons-quantity-container">
+        <Button
+          icon="plus"
           name="increase"
-          data-testid="product-increase-quantity"
+          color="pink"
           onClick={ increaseOrDecrease }
+        />
+        <span
+          data-testid="shopping-cart-product-quantity"
+          className="product-quantity"
         >
-          +
-        </button>
+          {quantity}
+        </span>
+        <Button
+          icon="minus"
+          name="decrease"
+          color="instagram"
+          onClick={ increaseOrDecrease }
+        />
       </section>
     );
   }
