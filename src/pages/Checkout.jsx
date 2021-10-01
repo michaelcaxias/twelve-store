@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { FiShoppingCart } from 'react-icons/fi';
+import { BiArrowBack } from 'react-icons/bi';
 import PaymentForm from '../components/PaymentForm';
 import UserData from '../components/UserData';
 import StepsCart from '../components/StepsCart';
+import Header from '../components/Header/Header';
 
 export default class Checkout extends Component {
   getLocalStorage = () => JSON.parse(localStorage.getItem('CartItens'))
@@ -12,6 +16,16 @@ export default class Checkout extends Component {
     if (itensLocalStorage !== null) {
       return (
         <div>
+          <Header>
+            <nav className="nav-header">
+              <Link to="/">
+                <BiArrowBack className="nav-icon" />
+              </Link>
+              <Link data-testid="shopping-cart-button" to="/cart">
+                <FiShoppingCart className="nav-icon" />
+              </Link>
+            </nav>
+          </Header>
           <StepsCart pay />
           <section>
             <h3>Carrinho:</h3>
