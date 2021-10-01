@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PaymentForm from '../components/PaymentForm';
 import UserData from '../components/UserData';
+import StepsCart from '../components/StepsCart';
 
 export default class Checkout extends Component {
   getLocalStorage = () => JSON.parse(localStorage.getItem('CartItens'))
@@ -11,6 +12,7 @@ export default class Checkout extends Component {
     if (itensLocalStorage !== null) {
       return (
         <div>
+          <StepsCart pay />
           <section>
             <h3>Carrinho:</h3>
             { itensLocalStorage.map(
