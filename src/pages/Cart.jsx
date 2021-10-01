@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ButtonQuantity from '../components/ButtonQuantity';
+import StepsCart from '../components/StepsCart';
 
 export default class Cart extends Component {
   getLocalStorage = () => JSON.parse(localStorage.getItem('CartItens'))
@@ -23,6 +24,7 @@ export default class Cart extends Component {
     if (itensLocalStorage !== null) {
       return (
         <section>
+          <StepsCart choose />
           { itensLocalStorage.map(
             ({ id, title }) => (
               <div key={ id }>
