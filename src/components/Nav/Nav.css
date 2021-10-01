@@ -21,7 +21,9 @@
 }
 
 .dropdown-content button:hover {
-  background-color: #3483fa;
+  background: linear-gradient(35deg, #eeb0c8, #bed1de);
+  color: black;
+  font-weight: 500;
 }
 
 .dropdown:hover .dropdown-content {

@@ -1,5 +1,5 @@
 body {
-  background-color: gainsboro;
+  background-color: #363d44;
 }
 
 .main-content {
@@ -9,7 +9,7 @@ body {
 
 .search-container {
   align-items: center;
-  background-color: #fff159;
+  background-color: #212529;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -50,7 +50,7 @@ body {
 }
 
 .nav-header {
-  background-color: #fff159;
+  background-color: #212529;
   display: flex;
   justify-content: space-around;
   padding: 1rem;
@@ -63,13 +63,14 @@ body {
 }
 
 .nav-item {
-  color: rgba(0, 0, 0, 0.582);
+  color: rgba(255, 255, 255, 0.911);
 }
 
 .nav-item:hover {
-  color: black;
+  color: white;
 }
 
 .shopping-cart-button {
   font-size: 1.5rem;
+  color: white;
 }

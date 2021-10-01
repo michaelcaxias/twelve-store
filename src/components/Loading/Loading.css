@@ -1,6 +1,6 @@
 .loading-container {
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.63);
+  backdrop-filter: blur(50%);
   display: flex;
   height: 100%;
   justify-content: center;
@@ -12,9 +12,9 @@
 
 .loading {
   animation: is-rotating 1s infinite;
-  border: 6px solid #e5e5e5;
+  border: 6px solid #15171a;
   border-radius: 50%;
-  border-top-color: #fff159;
+  border-top-color: #ffc3da;
   height: 50px;
   width: 50px;
 }
