@@ -8,6 +8,7 @@ import AddCart from '../AddCart';
 export default class Product extends React.Component {
   render() {
     const { title, thumbnail, price, id } = this.props;
+    const priceComma = String(price).replace('.', ',');
     return (
 
       <Card style={ { width: '18rem' } } data-testid="product" className="product">
@@ -18,7 +19,7 @@ export default class Product extends React.Component {
           <Card.Img variant="top" src={ thumbnail } alt={ title } />
           <hr />
           <Card.Body>
-            <Card.Title className="product-price">{`R$ ${price}`}</Card.Title>
+            <Card.Title className="product-price">{`R$ ${priceComma}`}</Card.Title>
             <Card.Text className="product-title">
               {title}
             </Card.Text>
