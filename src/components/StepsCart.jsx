@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Icon, Step } from 'semantic-ui-react';
 
@@ -28,13 +29,14 @@ export default class StepsCart extends Component {
 
   payment = () => {
     const { choose, confirm } = this.props;
+    const STEP_DESCRIPTION = 'Digite suas informações de pagamento';
     if (confirm) {
       return (
         <Step completed>
           <Icon name="payment" />
           <Step.Content>
             <Step.Title>Pagamento</Step.Title>
-            <Step.Description>Digite suas informações de pagamento</Step.Description>
+            <Step.Description>{STEP_DESCRIPTION}</Step.Description>
           </Step.Content>
         </Step>
       );
@@ -45,7 +47,7 @@ export default class StepsCart extends Component {
           <Icon name="payment" />
           <Step.Content>
             <Step.Title>Pagamento</Step.Title>
-            <Step.Description>Digite suas informações de pagamento</Step.Description>
+            <Step.Description>{STEP_DESCRIPTION}</Step.Description>
           </Step.Content>
         </Step>
       );
@@ -55,7 +57,7 @@ export default class StepsCart extends Component {
         <Icon name="payment" />
         <Step.Content>
           <Step.Title>Pagamento</Step.Title>
-          <Step.Description>Digite suas informações de pagamento</Step.Description>
+          <Step.Description>{STEP_DESCRIPTION}</Step.Description>
         </Step.Content>
       </Step>
     );
@@ -63,12 +65,13 @@ export default class StepsCart extends Component {
 
   confirmOrder = () => {
     const { choose, pay, confirm, finished } = this.props;
+    const CONFIRM_ORDER = 'Confirmando Pedido';
     if (confirm) {
       return (
         <Step>
           <Icon name="info" />
           <Step.Content>
-            <Step.Title>Confirmando Pedido</Step.Title>
+            <Step.Title>{CONFIRM_ORDER}</Step.Title>
           </Step.Content>
         </Step>
       );
@@ -78,7 +81,7 @@ export default class StepsCart extends Component {
         <Step>
           <Icon name="info" />
           <Step.Content>
-            <Step.Title>Confirmando Pedido</Step.Title>
+            <Step.Title>{CONFIRM_ORDER}</Step.Title>
           </Step.Content>
         </Step>
       );
@@ -88,7 +91,7 @@ export default class StepsCart extends Component {
         <Step>
           <Icon name="info" />
           <Step.Content>
-            <Step.Title>Confirmando Pedido</Step.Title>
+            <Step.Title>{CONFIRM_ORDER}</Step.Title>
           </Step.Content>
         </Step>
       );
@@ -105,3 +108,10 @@ export default class StepsCart extends Component {
     );
   }
 }
+
+StepsCart.propTypes = {
+  choose: PropTypes.bool.isRequired,
+  confirm: PropTypes.bool.isRequired,
+  finished: PropTypes.bool.isRequired,
+  pay: PropTypes.bool.isRequired,
+};
