@@ -1,17 +1,15 @@
 .ui.button {
   margin: 0;
-} 
+}
 
 .buttons-quantity-container {
-  display: flex;
   align-items: center;
-  margin: 0;
-  gap: 0;
+  display: flex;
 }
 
 .product-quantity {
+  background-color: rgb(255, 224, 229);
   font-size: 1rem;
-  padding: 0.6rem 1.3rem;
-  background-color: antiquewhite;
   font-weight: 900;
+  padding: 0.6rem 1.3rem;
 }
