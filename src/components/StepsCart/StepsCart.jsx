@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
+import './StepsCart.css';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Icon, Step } from 'semantic-ui-react';
 
 export default class StepsCart extends Component {

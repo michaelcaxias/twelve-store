@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FiShoppingCart } from 'react-icons/fi';
 import { BiArrowBack } from 'react-icons/bi';
 import ButtonQuantity from '../components/ButtonQuantity';
-import StepsCart from '../components/StepsCart';
+import StepsCart from '../components/StepsCart/StepsCart';
 import Header from '../components/Header/Header';
 
 export default class Cart extends Component {

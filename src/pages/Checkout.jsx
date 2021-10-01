@@ -4,7 +4,7 @@ import { FiShoppingCart } from 'react-icons/fi';
 import { BiArrowBack } from 'react-icons/bi';
 import PaymentForm from '../components/PaymentForm';
 import UserData from '../components/UserData';
-import StepsCart from '../components/StepsCart';
+import StepsCart from '../components/StepsCart/StepsCart';
 import Header from '../components/Header/Header';
 
 export default class Checkout extends Component {
