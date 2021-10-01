@@ -5,6 +5,7 @@ import './ProductDetails.css';
 import { FiShoppingCart } from 'react-icons/fi';
 import { BiArrowBack } from 'react-icons/bi';
 import { getProductsFromCategoryAndQuery } from '../../services/api';
+import Header from '../../components/Header/Header';
 import Loading from '../../components/Loading/Loading';
 import AddCart from '../../components/AddCart';
 import FormAvaliation from '../../components/FormAvaliation/FormAvaliation';
@@ -38,14 +39,16 @@ export default class ProductDetails extends Component {
       { id, title, thumbnail, price, permalink }, loading } = this.state;
     const product = (
       <section>
-        <header className="header-icons">
-          <Link to="/">
-            <BiArrowBack className="nav-icon" />
-          </Link>
-          <Link data-testid="shopping-cart-button" to="/cart">
-            <FiShoppingCart className="nav-icon" />
-          </Link>
-        </header>
+        <Header>
+          <nav className="nav-header">
+            <Link to="/">
+              <BiArrowBack className="nav-icon" />
+            </Link>
+            <Link data-testid="shopping-cart-button" to="/cart">
+              <FiShoppingCart className="nav-icon" />
+            </Link>
+          </nav>
+        </Header>
         <section className="product-details-container">
           <section className="product-details">
             <img src={ thumbnail } alt={ title } className="product-details-image" />
