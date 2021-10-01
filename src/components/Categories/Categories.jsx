@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import './Nav.css';
+import './Categories.css';
 import { Icon } from 'semantic-ui-react';
 import { getCategories } from '../../services/api';
 import Loading from '../Loading/Loading';

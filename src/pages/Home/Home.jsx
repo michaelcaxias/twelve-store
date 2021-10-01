@@ -2,13 +2,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
-import { Icon, Image } from 'semantic-ui-react';
 import { FiShoppingCart } from 'react-icons/fi';
-import Nav from '../../components/Nav/Nav';
-import logo from '../../images/logo.png';
+import Categories from '../../components/Categories/Categories';
 import ProductList from '../../components/ProductList/ProductList';
 import { getProductsFromCategoryAndQuery } from '../../services/api';
 import Loading from '../../components/Loading/Loading';
+import Header from '../../components/Header/Header';
 
 export default class Home extends Component {
   constructor() {
@@ -59,49 +58,22 @@ export default class Home extends Component {
     const { handleChange, handleSubmit, clickOnLogo } = this;
     const mainContent = (
       <main className="main-content">
-        <nav />
-        <header className="search-container">
-          <h1
-            data-testid="home-initial-message"
-            className="search-title"
-          >
-            Digite algum termo de pesquisa ou escolha uma categoria.
-          </h1>
-          <section className="input-search-container">
-            <Link to="/">
-              <Image src={ logo } size="small" onClick={ clickOnLogo } />
-            </Link>
-            <section className="input-and-button">
-              <input
-                name="inputSearch"
-                value={ inputSearch }
-                onChange={ handleChange }
-                className="input-search"
-                type="text"
-                data-testid="query-input"
-                onKeyPress={ handleSubmit }
-                placeHolder="Buscar produtos, marcas e muito mais..."
-              />
-              <button
-                data-testid="query-button"
-                type="button"
-                className="input-button"
-                onClick={ handleSubmit }
-              >
-                <Icon name="search" color="black" />
-              </button>
-            </section>
-          </section>
+        <Header
+          inputSearch={ inputSearch }
+          handleChange={ handleChange }
+          handleSubmit={ handleSubmit }
+          clickOnLogo={ clickOnLogo }
+        >
           <nav className="nav-header">
             <nav className="nav-items">
-              <Nav onClick={ this.fetchProductList } />
+              <Categories onClick={ this.fetchProductList } />
               <Link to="#contact" className="nav-item">Contato</Link>
             </nav>
             <Link data-testid="shopping-cart-button" to="/cart">
               <FiShoppingCart className="shopping-cart-button" />
             </Link>
           </nav>
-        </header>
+        </Header>
         <ProductList
           productList={ productList }
           productFound={ productFound }

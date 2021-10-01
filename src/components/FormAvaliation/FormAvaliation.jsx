@@ -126,7 +126,7 @@ export default class FormAvaliation extends React.Component {
           </Form>
         </section>
         <section>
-          <p>Avaliações:</p>
+          <p className="feedbacks-text">Avaliações:</p>
           <section className="feedbacks-section">
             { ratingHistory ? renderAvaliations : '' }
           </section>
