@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { FiShoppingCart } from 'react-icons/fi';
 import { BiArrowBack } from 'react-icons/bi';
+import { Item } from 'semantic-ui-react';
+import ProductCart from '../components/ProductCart/ProductCart';
 import PaymentForm from '../components/PaymentForm';
 import UserData from '../components/UserData';
 import StepsCart from '../components/StepsCart/StepsCart';
@@ -29,14 +31,19 @@ export default class Checkout extends Component {
           <StepsCart pay />
           <section>
             <h3>Carrinho:</h3>
-            { itensLocalStorage.map(
-              ({ id, title, price }) => (
-                <div key={ id }>
-                  <p>{ title }</p>
-                  <p>{ price }</p>
-                </div>
-              ),
-            ) }
+            <Item.Group>
+              { itensLocalStorage.map(
+                ({ id, title, price, thumbnail }) => (
+                  <ProductCart
+                    key={ id }
+                    price={ price }
+                    title={ title }
+                    thumbnail={ thumbnail }
+                    disabled
+                  />
+                ),
+              ) }
+            </Item.Group>
           </section>
           <section>
             <h3>Preço total:</h3>

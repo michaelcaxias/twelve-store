@@ -6,7 +6,7 @@ import ButtonQuantity from '../ButtonQuantity/ButtonQuantity';
 
 export default class ProductCart extends Component {
   render() {
-    const { title, price, thumbnail } = this.props;
+    const { title, price, thumbnail, disabled } = this.props;
     return (
       <Item className="product-cart">
         <Item.Image size="tiny" src={ thumbnail } />
@@ -16,7 +16,7 @@ export default class ProductCart extends Component {
           <Item.Meta>
             <span className="title-product-cart">{title}</span>
           </Item.Meta>
-          <ButtonQuantity />
+          <ButtonQuantity disabled={ disabled } />
         </Item.Content>
       </Item>
     );
@@ -27,4 +27,5 @@ ProductCart.propTypes = {
   price: PropTypes.number.isRequired,
   thumbnail: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  disabled: PropTypes.bool.isRequired,
 };

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './ButtonQuantity.css';
 import React, { Component } from 'react';
 import { Button } from 'semantic-ui-react';
@@ -24,9 +25,10 @@ export default class ButtonQuantity extends Component {
   }
 
   render() {
+    const { disabled } = this.props;
     const { quantity } = this.state;
     const { increaseOrDecrease } = this;
-    return (
+    return !disabled && (
       <section className="buttons-quantity-container">
         <Button
           icon="plus"
@@ -50,3 +52,7 @@ export default class ButtonQuantity extends Component {
     );
   }
 }
+
+ButtonQuantity.propTypes = {
+  disabled: PropTypes.bool.isRequired,
+};
