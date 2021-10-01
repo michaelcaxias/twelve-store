@@ -18,7 +18,7 @@ export default class Checkout extends Component {
         <div>
           <Header>
             <nav className="nav-header">
-              <Link to="/">
+              <Link to="/cart">
                 <BiArrowBack className="nav-icon" />
               </Link>
               <Link data-testid="shopping-cart-button" to="/cart">

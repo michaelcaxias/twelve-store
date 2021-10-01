@@ -15,10 +15,6 @@ body {
   width: 100%;
 }
 
-.search-title {
-  display: none;
-}
-
 .input-search-container {
   align-items: center;
   display: flex;

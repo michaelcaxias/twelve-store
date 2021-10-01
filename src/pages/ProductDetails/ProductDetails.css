@@ -41,4 +41,9 @@
 .nav-icon {
   font-size: 1.5rem;
   color: white;
+  transition: 0.5s;
+}
+
+.nav-icon:hover {
+  color: #eeb0c8;
 }

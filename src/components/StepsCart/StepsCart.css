@@ -2,3 +2,11 @@
   width: 100%;
   margin: 0 0;
 }
+
+.ui.steps .step.active {
+  background: linear-gradient(35deg, #eeb0c8, #bed1de);
+}
+
+.ui.steps .step.active:after {
+  background: #c0d0dd;
+}

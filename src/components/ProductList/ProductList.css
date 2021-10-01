@@ -1,6 +1,6 @@
 .products {
   align-items: center;
-  color: rgb(68, 68, 68);
+  color: white;
   display: flex;
   flex-flow: row wrap;
   height: 80vh;

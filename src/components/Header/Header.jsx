@@ -16,12 +16,6 @@ export default class Header extends Component {
 
     return (
       <header className="search-container">
-        <h1
-          data-testid="home-initial-message"
-          className="search-title"
-        >
-          Digite algum termo de pesquisa ou escolha uma categoria.
-        </h1>
         <section className="input-search-container">
           <Link to="/">
             <Image src={ logo } size="small" onClick={ clickOnLogo } />
