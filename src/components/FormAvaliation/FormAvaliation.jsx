@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './FormAvaliation.css';
-// Foi utilizado neste projeto o FrameWork Semantic UI
 import { Rating } from 'semantic-ui-react';
 import { Form, Button } from 'react-bootstrap';
 import perfilImage from '../../images/perfil-image.png';

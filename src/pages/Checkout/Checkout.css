@@ -1,0 +1,14 @@
+.total-price-section {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.checkout-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 1rem;
+}
