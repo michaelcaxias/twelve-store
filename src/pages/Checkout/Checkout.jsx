@@ -6,7 +6,7 @@ import { BiArrowBack } from 'react-icons/bi';
 import { Item } from 'semantic-ui-react';
 import ProductCart from '../../components/ProductCart/ProductCart';
 import PaymentForm from '../../components/PaymentForm';
-import UserData from '../../components/UserData';
+import UserData from '../../components/UserData/UserData';
 import StepsCart from '../../components/StepsCart/StepsCart';
 import Header from '../../components/Header/Header';
 
@@ -32,21 +32,23 @@ export default class Checkout extends Component {
           </Header>
           <StepsCart pay />
           <section className="checkout-section">
-            <Item.Group>
-              { itensLocalStorage.map(
-                ({ id, title, price, thumbnail }) => (
-                  <ProductCart
-                    key={ id }
-                    price={ price }
-                    title={ title }
-                    thumbnail={ thumbnail }
-                    disabled
-                  />
-                ),
-              ) }
-            </Item.Group>
+            <section className="products-checkout">
+              <Item.Group>
+                { itensLocalStorage.map(
+                  ({ id, title, price, thumbnail }) => (
+                    <ProductCart
+                      key={ id }
+                      price={ price }
+                      title={ title }
+                      thumbnail={ thumbnail }
+                      disabled
+                    />
+                  ),
+                ) }
+              </Item.Group>
+            </section>
             <section className="total-price-section">
-              <h3>{`Preço total: R$ ${String(totalPrice).replace('.', ',')}`}</h3>
+              <h4>{`Preço total: R$ ${String(totalPrice).replace('.', ',')}`}</h4>
             </section>
             <UserData />
             <PaymentForm />

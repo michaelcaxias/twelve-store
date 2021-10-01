@@ -1,6 +1,10 @@
+.products-checkout {
+  margin: 1rem 0;
+}
+
 .total-price-section {
   align-items: center;
-  background-color: white;
+  color: pink;
   display: flex;
   justify-content: center;
   padding: 0.5rem;

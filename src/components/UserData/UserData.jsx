@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Input, Button, Select } from 'semantic-ui-react';
+import './UserData.css';
 
 const genderOptions = [
   { key: 'm', text: 'Homem', value: 'male' },
@@ -45,7 +46,7 @@ const stateOptions = [
 export default class UserData extends Component {
   render() {
     return (
-      <Form>
+      <Form className="user-info">
         <Form.Group widths="equal">
           <Form.Field
             data-testid="checkout-fullname"
