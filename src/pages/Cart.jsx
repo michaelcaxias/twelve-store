@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { FiShoppingCart } from 'react-icons/fi';
 import { BiArrowBack } from 'react-icons/bi';
-import ButtonQuantity from '../components/ButtonQuantity';
+import { Item } from 'semantic-ui-react';
 import StepsCart from '../components/StepsCart/StepsCart';
 import Header from '../components/Header/Header';
+import ProductCart from '../components/ProductCart/ProductCart';
 
 export default class Cart extends Component {
   getLocalStorage = () => JSON.parse(localStorage.getItem('CartItens'))
@@ -14,6 +15,16 @@ export default class Cart extends Component {
 
     const emptyCart = (
       <>
+        <Header>
+          <nav className="nav-header">
+            <Link to="/">
+              <BiArrowBack className="nav-icon" />
+            </Link>
+            <Link data-testid="shopping-cart-button" to="/cart">
+              <FiShoppingCart className="nav-icon" />
+            </Link>
+          </nav>
+        </Header>
         <p data-testid="shopping-cart-product-quantity">0</p>
         <h1
           data-testid="shopping-cart-empty-message"
@@ -38,14 +49,18 @@ export default class Cart extends Component {
             </nav>
           </Header>
           <StepsCart choose />
-          { itensLocalStorage.map(
-            ({ id, title }) => (
-              <div key={ id }>
-                <p data-testid="shopping-cart-product-name">{ title }</p>
-                <ButtonQuantity />
-              </div>
-            ),
-          ) }
+          <Item.Group>
+            { itensLocalStorage.map(
+              ({ id, title, price, thumbnail }) => (
+                <ProductCart
+                  key={ id }
+                  price={ price }
+                  title={ title }
+                  thumbnail={ thumbnail }
+                />
+              ),
+            ) }
+          </Item.Group>
           <Link to="/checkout">
             <button
               type="button"

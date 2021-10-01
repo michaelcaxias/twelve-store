@@ -1,6 +1,7 @@
 .product {
   border-radius: 10px;
   justify-content: center;
+  color: rgba(0, 0, 0, 0.795);
   margin: 1rem;
   padding: 1rem;
   transition: 0.5s;

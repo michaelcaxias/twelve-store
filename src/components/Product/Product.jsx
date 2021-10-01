@@ -25,7 +25,13 @@ export default class Product extends React.Component {
             </Card.Text>
           </Card.Body>
         </Link>
-        <AddCart id={ id } title={ title } price={ price } testId="product-add-to-cart" />
+        <AddCart
+          id={ id }
+          title={ title }
+          price={ price }
+          thumbnail={ thumbnail }
+          testId="product-add-to-cart"
+        />
       </Card>
     );
   }

@@ -3,8 +3,8 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 
 export default class AddCart extends React.Component {
-  addLocalStorage = (id, title, price) => {
-    const products = { id, title, price };
+  addLocalStorage = (id, title, price, thumbnail) => {
+    const products = { id, title, price, thumbnail };
     if (localStorage.getItem('CartItens') === null) {
       localStorage.setItem('CartItens', JSON.stringify([products]));
     } else {
@@ -17,12 +17,12 @@ export default class AddCart extends React.Component {
   }
 
   render() {
-    const { id, title, testId, price } = this.props;
+    const { id, title, testId, price, thumbnail } = this.props;
     return (
       <Button
         type="button"
         data-testid={ testId }
-        onClick={ () => this.addLocalStorage(id, title, price) }
+        onClick={ () => this.addLocalStorage(id, title, price, thumbnail) }
       >
         Adicionar ao Carrinho
       </Button>
@@ -34,5 +34,6 @@ AddCart.propTypes = {
   id: PropTypes.string.isRequired,
   testId: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  thumbnail: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
 };

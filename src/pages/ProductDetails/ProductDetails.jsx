@@ -59,6 +59,7 @@ export default class ProductDetails extends Component {
                 id={ id }
                 title={ title }
                 price={ price }
+                thumbnail={ thumbnail }
                 testId="product-detail-add-to-cart"
               />
               <a
