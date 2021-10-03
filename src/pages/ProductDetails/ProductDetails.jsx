@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './ProductDetails.css';
 import { FiShoppingCart } from 'react-icons/fi';
 import { BiArrowBack } from 'react-icons/bi';
-import { getProductsFromCategoryAndQuery } from '../../services/api';
+import { getProductById } from '../../services/api';
 import Header from '../../components/Header/Header';
 import Loading from '../../components/Loading/Loading';
 import AddCart from '../../components/AddCart';
@@ -15,7 +15,7 @@ export default class ProductDetails extends Component {
     super(props);
     this.state = {
       loading: true,
-      productDetails: [],
+      productDetails: {},
     };
   }
 
@@ -24,19 +24,19 @@ export default class ProductDetails extends Component {
     this.getProductDetails(id, title);
   }
 
-  getProductDetails = async (productId, productQuery) => {
-    const { results } = await getProductsFromCategoryAndQuery(productId, productQuery);
-    const productDetails = results.find(({ id }) => id === productId);
+  getProductDetails = async (productId) => {
+    const productDetails = await getProductById(productId);
     this.setState({
       loading: false,
       productDetails,
+      picture: productDetails.pictures[0].url,
     });
     return true;
   }
 
   render() {
     const { productDetails:
-      { id, title, thumbnail, price, permalink }, loading } = this.state;
+      { id, title, price, permalink }, loading, picture } = this.state;
     const product = (
       <section>
         <Header>
@@ -51,7 +51,7 @@ export default class ProductDetails extends Component {
         </Header>
         <section className="product-details-container">
           <section className="product-details">
-            <img src={ thumbnail } alt={ title } className="product-details-image" />
+            <img src={ picture } alt={ title } className="product-details-image" />
             <h1>{`R$ ${price}`}</h1>
             <p data-testid="product-detail-name ">{ title }</p>
             <section className="product-details-buttons">
@@ -59,7 +59,7 @@ export default class ProductDetails extends Component {
                 id={ id }
                 title={ title }
                 price={ price }
-                thumbnail={ thumbnail }
+                thumbnail={ picture }
                 testId="product-detail-add-to-cart"
               />
               <a
