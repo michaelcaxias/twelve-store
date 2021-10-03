@@ -68,7 +68,7 @@ export default class Cart extends Component {
             <Link to="/checkout">
               <Button
                 icon
-                className="checkout-button"
+                className="cart-button"
                 labelPosition="right"
                 data-testid="checkout-products"
               >

@@ -3,7 +3,7 @@ import './Checkout.css';
 import { Link } from 'react-router-dom';
 import { FiShoppingCart } from 'react-icons/fi';
 import { BiArrowBack } from 'react-icons/bi';
-import { Item } from 'semantic-ui-react';
+import { Button, Item, Icon } from 'semantic-ui-react';
 import ProductCart from '../../components/ProductCart/ProductCart';
 import PaymentForm from '../../components/PaymentForm';
 import UserData from '../../components/UserData/UserData';
@@ -50,10 +50,21 @@ export default class Checkout extends Component {
             <section className="total-price-section">
               <h4>{`Preço total: R$ ${String(totalPrice).replace('.', ',')}`}</h4>
             </section>
-            <UserData />
-            <PaymentForm />
+            <UserData>
+              <PaymentForm />
+            </UserData>
           </section>
-          <button type="button">Comprar</button>
+          <section className="checkout-button-container">
+            <Button
+              icon
+              className="cart-button"
+              labelPosition="right"
+              data-testid="checkout-products"
+            >
+              Finalizar Compra
+              <Icon name="check" />
+            </Button>
+          </section>
         </section>
       );
     }

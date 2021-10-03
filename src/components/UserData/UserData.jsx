@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Form, Input, Button, Select } from 'semantic-ui-react';
+import { Form, Input, Select } from 'semantic-ui-react';
 import './UserData.css';
 
 const genderOptions = [
@@ -45,6 +46,7 @@ const stateOptions = [
 
 export default class UserData extends Component {
   render() {
+    const { children } = this.props;
     return (
       <Form className="user-info">
         <Form.Group widths="equal">
@@ -119,12 +121,12 @@ export default class UserData extends Component {
             placeholder="CEP"
           />
         </Form.Group>
-        <Form.Field
-          id="form-button-control-public"
-          control={ Button }
-          content="Confirmar"
-        />
+        { children }
       </Form>
     );
   }
 }
+
+UserData.propTypes = {
+  children: PropTypes.node.isRequired,
+};

@@ -11,10 +11,10 @@
   justify-content: center;
 }
 
-.ui.checkout-button {
+.ui.cart-button {
   background: linear-gradient(35deg, #eeb0c8, #bed1de);
 }
 
-.ui.checkout-button:hover {
+.ui.cart-button:hover {
   background: linear-gradient(35deg, #ffa0c5, #c9e5f8);
 }
