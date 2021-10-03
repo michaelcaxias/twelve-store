@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import { FiShoppingCart } from 'react-icons/fi';
 import { BiArrowBack } from 'react-icons/bi';
 import { Item } from 'semantic-ui-react';
-import StepsCart from '../components/StepsCart/StepsCart';
-import Header from '../components/Header/Header';
-import ProductCart from '../components/ProductCart/ProductCart';
+import './Cart.css';
+import StepsCart from '../../components/StepsCart/StepsCart';
+import Header from '../../components/Header/Header';
+import ProductCart from '../../components/ProductCart/ProductCart';
 
 export default class Cart extends Component {
   getLocalStorage = () => JSON.parse(localStorage.getItem('CartItens'))
@@ -25,13 +26,15 @@ export default class Cart extends Component {
             </Link>
           </nav>
         </Header>
-        <p data-testid="shopping-cart-product-quantity">0</p>
-        <h1
-          data-testid="shopping-cart-empty-message"
-        >
+        <section className="empty-cart-section">
+          <h1
+            data-testid="shopping-cart-empty-message"
+            className="empty-cart"
+          >
 
-          Seu carrinho está vazio
-        </h1>
+            Seu carrinho está vazio
+          </h1>
+        </section>
       </>
     );
 
