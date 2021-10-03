@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { FiShoppingCart } from 'react-icons/fi';
 import { BiArrowBack } from 'react-icons/bi';
-import { Item } from 'semantic-ui-react';
+import { Item, Button, Icon } from 'semantic-ui-react';
 import './Cart.css';
 import StepsCart from '../../components/StepsCart/StepsCart';
 import Header from '../../components/Header/Header';
@@ -64,14 +64,19 @@ export default class Cart extends Component {
               ),
             ) }
           </Item.Group>
-          <Link to="/checkout">
-            <button
-              type="button"
-              data-testid="checkout-products"
-            >
-              Finalizar compra
-            </button>
-          </Link>
+          <section className="checkout-button-container">
+            <Link to="/checkout">
+              <Button
+                icon
+                className="checkout-button"
+                labelPosition="right"
+                data-testid="checkout-products"
+              >
+                Prosseguir com a compra
+                <Icon name="right arrow" />
+              </Button>
+            </Link>
+          </section>
         </section>
       );
     }

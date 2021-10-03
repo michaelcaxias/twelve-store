@@ -4,3 +4,17 @@
   height: 80vh;
   justify-content: center;
 }
+
+.checkout-button-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.ui.checkout-button {
+  background: linear-gradient(35deg, #eeb0c8, #bed1de);
+}
+
+.ui.checkout-button:hover {
+  background: linear-gradient(35deg, #ffa0c5, #c9e5f8);
+}
