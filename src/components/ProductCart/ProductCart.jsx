@@ -14,7 +14,12 @@ export default class ProductCart extends Component {
         <Item.Content>
           <Item.Header>{`R$ ${String(price).replace('.', ',')}`}</Item.Header>
           <Item.Meta>
-            <span className="title-product-cart">{title}</span>
+            <span
+              className="title-product-cart"
+              data-testid="shopping-cart-product-name"
+            >
+              {title}
+            </span>
           </Item.Meta>
           <ButtonQuantity disabled={ disabled } />
         </Item.Content>
