@@ -9,6 +9,7 @@ import Header from '../../components/Header/Header';
 import Loading from '../../components/Loading/Loading';
 import AddCart from '../../components/AddCart';
 import FormAvaliation from '../../components/FormAvaliation/FormAvaliation';
+import Footer from '../../components/Footer/Footer';
 
 export default class ProductDetails extends Component {
   constructor(props) {
@@ -74,6 +75,7 @@ export default class ProductDetails extends Component {
           </section>
           <FormAvaliation id={ id } />
         </section>
+        <Footer />
       </section>
     );
     return (

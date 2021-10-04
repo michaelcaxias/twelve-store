@@ -7,6 +7,7 @@ import './Cart.css';
 import StepsCart from '../../components/StepsCart/StepsCart';
 import Header from '../../components/Header/Header';
 import ProductCart from '../../components/ProductCart/ProductCart';
+import Footer from '../../components/Footer/Footer';
 
 export default class Cart extends Component {
   getLocalStorage = () => JSON.parse(localStorage.getItem('CartItens'))
@@ -77,6 +78,7 @@ export default class Cart extends Component {
               </Button>
             </Link>
           </section>
+          <Footer />
         </section>
       );
     }

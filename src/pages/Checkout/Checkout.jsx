@@ -5,6 +5,7 @@ import { FiShoppingCart } from 'react-icons/fi';
 import { BiArrowBack } from 'react-icons/bi';
 import { Button, Item, Icon } from 'semantic-ui-react';
 import ProductCart from '../../components/ProductCart/ProductCart';
+import Footer from '../../components/Footer/Footer';
 import PaymentForm from '../../components/PaymentForm';
 import UserData from '../../components/UserData/UserData';
 import StepsCart from '../../components/StepsCart/StepsCart';
@@ -65,6 +66,7 @@ export default class Checkout extends Component {
               <Icon name="check" />
             </Button>
           </section>
+          <Footer />
         </section>
       );
     }
