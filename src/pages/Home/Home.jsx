@@ -8,6 +8,7 @@ import ProductList from '../../components/ProductList/ProductList';
 import { getProductsFromCategoryAndQuery } from '../../services/api';
 import Loading from '../../components/Loading/Loading';
 import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 
 export default class Home extends Component {
   constructor() {
@@ -78,6 +79,7 @@ export default class Home extends Component {
           productList={ productList }
           productFound={ productFound }
         />
+        <Footer />
       </main>
     );
     return (
