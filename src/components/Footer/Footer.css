@@ -2,9 +2,9 @@
   align-items: center;
   background-color: #212529;
   display: flex;
+  gap: 2rem;
   height: 100px;
   justify-content: space-around;
-  gap: 2rem;
   margin-top: 1.5rem;
   padding: 8rem;
 }
