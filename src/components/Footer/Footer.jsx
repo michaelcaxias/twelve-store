@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Item } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 import './Footer.css';
 
 export default class Footer extends Component {
@@ -15,7 +15,56 @@ export default class Footer extends Component {
           </p>
         </section>
         <section className="footer-devs">
-          <h2>Desenvolvedores</h2>
+          <section className="dev-info">
+            <a
+              href="https://www.linkedin.com/in/michaelcaxias/"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <p>Michael Caxias</p>
+              <Button circular color="linkedin" icon="linkedin" size="tiny" />
+            </a>
+          </section>
+          <section className="dev-info">
+            <a
+              href="https://www.linkedin.com/in/lucas-accurcio/"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <p>Lucas Accurcio</p>
+              <Button circular color="linkedin" icon="linkedin" size="tiny" />
+            </a>
+          </section>
+          <section className="dev-info">
+            <a
+              href="https://www.linkedin.com/in/michaelcaxias/"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <p>Cássio Mascarenhas</p>
+              <Button circular color="linkedin" icon="linkedin" size="tiny" />
+            </a>
+          </section>
+          <section className="dev-info">
+            <a
+              href="https://www.linkedin.com/in/anastacio-neto/"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <p>Anastácio Neto</p>
+              <Button circular color="linkedin" icon="linkedin" size="tiny" />
+            </a>
+          </section>
+          <section className="dev-info">
+            <a
+              href="https://www.linkedin.com/in/julio-cesar-fallace-filho-144a94b3/"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <p>Julio Fallace Filho</p>
+              <Button circular color="linkedin" icon="linkedin" size="tiny" />
+            </a>
+          </section>
         </section>
       </footer>
     );
