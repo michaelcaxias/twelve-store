@@ -1,11 +1,14 @@
 body {
   background-color: #363d44;
   color: white;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-content {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .search-container {

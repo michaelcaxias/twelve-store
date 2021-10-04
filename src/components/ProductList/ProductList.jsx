@@ -8,11 +8,13 @@ export default class ProductList extends React.Component {
   renderProducts = () => {
     const { productFound, productList } = this.props;
     const notFoundHeading = (
-      <h1 className="no-products">
-        Nenhum produto foi encontrado
-        {' '}
-        <BiShoppingBag />
-      </h1>
+      <section className="no-products">
+        <h1>
+          Nenhum produto foi encontrado
+          {' '}
+          <BiShoppingBag />
+        </h1>
+      </section>
     );
     const productMap = productList
       .map(({ id, title, thumbnail, price }) => (
@@ -24,16 +26,17 @@ export default class ProductList extends React.Component {
           price={ price }
         />
       ));
+    const productsContainer = (
+      <section className="products">
+        { productMap }
+      </section>
+    );
     return productFound
-      ? productMap : notFoundHeading;
+      ? productsContainer : notFoundHeading;
   }
 
   render() {
-    return (
-      <div className="products">
-        { this.renderProducts() }
-      </div>
-    );
+    return this.renderProducts();
   }
 }
 
