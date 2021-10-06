@@ -49,7 +49,7 @@ export default class Checkout extends Component {
               </Item.Group>
             </section>
             <section className="total-price-section">
-              <h4>{`Preço total: R$ ${String(totalPrice).replace('.', ',')}`}</h4>
+              <h4>{`Preço total: R$ ${totalPrice.toFixed(2).replace('.', ',')}`}</h4>
             </section>
             <UserData>
               <PaymentForm />

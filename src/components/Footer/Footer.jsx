@@ -37,11 +37,11 @@ export default class Footer extends Component {
           </section>
           <section className="dev-info">
             <a
-              href="https://www.linkedin.com/in/michaelcaxias/"
+              href="https://www.linkedin.com/in/c%C3%A1ssio-mascarenhas-40026019b/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              <p>Cássio Mascarenhas</p>
+              <p>Mega Mascarenhas</p>
               <Button circular color="linkedin" icon="linkedin" size="tiny" />
             </a>
           </section>
