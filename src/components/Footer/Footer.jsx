@@ -18,7 +18,7 @@ export default class Footer extends Component {
           <section className="dev-info">
             <a
               href="https://www.linkedin.com/in/michaelcaxias/"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               <p>Michael Caxias</p>
@@ -28,7 +28,7 @@ export default class Footer extends Component {
           <section className="dev-info">
             <a
               href="https://www.linkedin.com/in/lucas-accurcio/"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               <p>Lucas Accurcio</p>
@@ -38,7 +38,7 @@ export default class Footer extends Component {
           <section className="dev-info">
             <a
               href="https://www.linkedin.com/in/michaelcaxias/"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               <p>Cássio Mascarenhas</p>
@@ -48,7 +48,7 @@ export default class Footer extends Component {
           <section className="dev-info">
             <a
               href="https://www.linkedin.com/in/anastacio-neto/"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               <p>Anastácio Neto</p>
@@ -58,7 +58,7 @@ export default class Footer extends Component {
           <section className="dev-info">
             <a
               href="https://www.linkedin.com/in/julio-cesar-fallace-filho-144a94b3/"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               <p>Julio Fallace Filho</p>
