@@ -42,7 +42,7 @@ npm start
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 [![SEMANTIC UI](https://img.shields.io/badge/semantic%20ui%20react-35BDB2?style=for-the-badge&logo=semanticuireact&logoColor=white)](https://semantic-ui.com/)
 
-## 🤝 Colaboradores
+## 🤝 Desenvolvedores
 
 Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
