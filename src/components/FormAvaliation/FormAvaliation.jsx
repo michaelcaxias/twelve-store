@@ -48,6 +48,7 @@ export default class FormAvaliation extends React.Component {
   }
 
   handleSubmit = () => {
+    window.location.reload();
     this.addLocalStorage();
   } ;
 
