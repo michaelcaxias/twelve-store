@@ -1,8 +1,6 @@
 
 <img src="preview2.gif" alt="preview da aplicação">
 
-<img src="preview.gif" alt="preview da aplicação">
-
 # Twelve Store
 
 Projeto feito em grupo durante o curso da [Trybe](https://www.betrybe.com/) com o objetivo de treinar as metodologias ágeis com DM's e Kanbam, além de utilizarmos Redux para o gerenciamento de estados.
@@ -12,6 +10,7 @@ Projeto feito em grupo durante o curso da [Trybe](https://www.betrybe.com/) com 
 - Rota principal `/` com uma barra de pesquisa para pesquisar por nome de produto.
 - Rota `/cart` para o acesso a modificação de produtos por quantidade.
 - Rota `/checkout` para o acesso a checagem dos produtos, preço total e forma de pagamento.
+- <img src="preview.gif" alt="preview da aplicação">
 - Listagem de produtos por categoria
 - Tela de Loading
 - Tela de detalhes do produto clicado com acesso a avaliações.
