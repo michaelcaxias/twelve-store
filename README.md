@@ -15,13 +15,13 @@ Projeto feito em grupo durante o curso da [Trybe](https://www.betrybe.com/) com 
 - Tela de Loading
 - Tela de detalhes do produto clicado com acesso a avaliações.
 
-## Habilidades utilizadas
+## ⭐ Habilidades
 
 - Utilizar o Trello para organização em grupo.
 - Utilizar o Redux para gerenciamento de estados.
 - Utilizar o framework Semantic UI para realizar estilizações.
 
-## Como iniciar
+## 💻 Como iniciar
 
 1. Faça o clone do projeto
 2. Instale as dependências
