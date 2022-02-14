@@ -1,7 +1,7 @@
 
 <img src="preview2.gif" alt="preview da aplicação">
 
-# Twelve Store
+# [Twelve Store](https://twelve-store.vercel.app/)
 
 Projeto feito em grupo durante o curso da [Trybe](https://www.betrybe.com/) com o objetivo de treinar as metodologias ágeis com DM's e Kanbam, além de utilizarmos Redux para o gerenciamento de estados.
 
