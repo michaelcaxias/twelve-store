@@ -9,6 +9,8 @@ export default class Product extends React.Component {
   render() {
     const { title, thumbnail, price, id } = this.props;
     const priceComma = String(price).replace('.', ',');
+    const image = thumbnail.replace(/\w\.jpg/gi, 'W.jpg')
+
     return (
 
       <Card style={ { width: '18rem' } } data-testid="product" className="product">
